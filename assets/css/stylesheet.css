@@ -1,4 +1,31 @@
+
 /* css */ 
+
+
+section  div {
+
+     float: left;
+     height: 50px;
+     width: 50px;
+
+
+
+
+}
+
+img {
+
+	height: 50px;
+	width: 50px;
+}
+
+}
+
+#result {
+
+	clear: both;
+}
+
 
 
 

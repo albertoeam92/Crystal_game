@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    var yesOrNo = true;
+    
     var wins = 0;
     var loses = 0;
     var resultCrystal = 0;
@@ -19,12 +19,14 @@ $(document).ready(function(){
 	     	console.log(blueNumber);
 	     	console.log(yellowNumber);
 	       	console.log(greenNumber);
-
+            
+            $("#match-number").html(matchNumber);
 
 	     	$("#red").on("click", function () {
 
 	     		resultCrystal = resultCrystal + redNumber;
 	     		console.log(resultCrystal);
+	     		$("#result").html(resultCrystal);
 
 	     	});
 
@@ -32,6 +34,7 @@ $(document).ready(function(){
 
 	     		resultCrystal = resultCrystal + blueNumber;
 	     		console.log(resultCrystal);
+	     		$("#result").html(resultCrystal);
 
 	     	});
 
@@ -39,6 +42,7 @@ $(document).ready(function(){
 
 	     		resultCrystal = resultCrystal + yellowNumber;
 	     		console.log(resultCrystal);
+	     		$("#result").html(resultCrystal);
 
 	     	});
 
@@ -46,10 +50,26 @@ $(document).ready(function(){
 
 	     		resultCrystal = resultCrystal + greenNumber;
 	     		console.log(resultCrystal);
+	     		$("#result").html(resultCrystal);
 
 	     	});
 
-            
+
+            if(resultCrystal == matchNumber) {
+
+            	wins++;
+                
+                $("#wins-loses").append("<p>" + " You win!" + "</p>");
+            	$( "#wins").html("<p>"+"Wins: "+ wins+ "</p>" + "<br>");
+            }   
+
+            if (resultCrystal > matchNumber) {
+                
+                loses++;
+
+            	$("#loses").html("<p>"+"Loses: "+ loses + "</p>" + "<br>");
+
+            }
 
      });
     
